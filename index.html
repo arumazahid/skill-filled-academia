@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skill Filled Academia | Hunar &amp; Hikmah</title>
+<meta name="description" content="Islamic wisdom and modern skills. Digital skills, Quran and Islamic studies in Islamabad and online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1f3c;--deep:#091730;--gold:#e0b45a;--green:#2f9e6e;--mint:#4cc08c;--ink:#16243b;--mut:#5b6b82;--bg:#f5f7fa;--line:#dfe4ec}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font:16px/1.65 'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;font-weight:700}
+a{color:inherit}
+.wrap{max-width:1120px;margin:auto;padding:0 20px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn{display:inline-block;padding:12px 26px;border-radius:99px;background:var(--gold);color:var(--navy);font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:15px}
+.btn.ghost{background:none;color:#fff;border:1px solid #ffffff66}
+.btn.sm{padding:8px 18px;font-size:14px}
+header{position:sticky;top:0;z-index:50;background:#0d1f3cf2;backdrop-filter:blur(8px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{height:54px;background:#fff;border-radius:6px;padding:3px;display:block}
+nav{display:flex;gap:24px;align-items:center}
+nav a:not(.btn){color:#d9e1ee;text-decoration:none;font-size:15px}
+nav a:not(.btn):hover{color:var(--gold)}
+.menu{display:none;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+.hero{color:#fff;padding:96px 0 80px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cpath d='M45 8l9 25 25-9-9 25 25 9-25 9 9 25-25-9-9 25-9-25-25 9 9-25-25-9 25-9-9-25 25 9z' fill='none' stroke='%23e0b45a' stroke-opacity='.13'/%3E%3C/svg%3E"),linear-gradient(135deg,#0d1f3c 30%,#14365f)}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:800px}
+.hero p{max-width:600px;color:#c5d0e3;margin:22px 0 32px;font-size:1.1rem}
+.hero .row{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:flex;flex-wrap:wrap;gap:12px 44px;margin-top:56px;padding-top:28px;border-top:1px solid #ffffff22}
+.stats b{display:block;font:700 1.9rem Fraunces,serif;color:var(--gold)}
+.stats span{color:#9fb0cb;font-size:14px}
+section{padding:84px 0}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:12px}
+.lead{color:var(--mut);max-width:620px;margin-bottom:34px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:30px}
+.box{padding:30px;border-radius:4px 28px 4px 28px;background:#fff;border:1px solid var(--line)}
+.box.navy{background:var(--navy);color:#e8eef8;border:0}
+.box h3{font-size:1.3rem;margin-bottom:10px;color:var(--green)}
+.box.navy h3{color:var(--gold)}
+.goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 40px;margin-top:44px}
+.goals li{list-style:none;padding:14px 0 14px 28px;border-bottom:1px solid var(--line);position:relative;color:var(--mut)}
+.goals li:before{content:"";position:absolute;left:4px;top:23px;width:9px;height:9px;background:var(--green);transform:rotate(45deg)}
+.vals{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.vals span{padding:8px 18px;border-radius:99px;border:1px solid var(--green);color:var(--green);font-weight:500;font-size:15px}
+.dark{background:var(--navy);color:#fff}
+.dark .lead{color:#a9b8d0}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.tab{background:none;border:1px solid #ffffff33;color:#d9e1ee;padding:9px 18px;border-radius:99px;cursor:pointer;font:inherit;font-size:15px}
+.tab b{margin-left:8px;color:var(--mint)}
+.tab.on{border-color:var(--mint);background:#2f9e6e22;color:#fff}
+.frame{color:#a9b8d0;font-size:14px;margin-bottom:10px}
+.list{border-top:1px solid #ffffff22}
+.row2{display:grid;grid-template-columns:1.1fr 1.6fr auto;gap:12px 28px;align-items:center;padding:22px 0;border-bottom:1px solid #ffffff22}
+.row2 h3{font-size:1.35rem}
+.row2 h3 small{display:block;font:500 13px 'DM Sans';color:var(--mint);margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0}
+.chips li{font-size:13.5px;color:#c5d0e3;background:#ffffff12;padding:4px 12px;border-radius:99px}
+.buy{display:flex;align-items:center;gap:18px}
+.price{font:700 1.6rem Fraunces,serif;color:var(--gold);text-align:right;line-height:1.2}
+.price small{display:block;font:400 12px 'DM Sans';color:#a9b8d0}
+.soon{padding:30px 0;color:#c5d0e3}
+.soon .btn{margin-top:14px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;margin-top:30px;border-left:3px solid var(--green)}
+.steps div{padding:6px 24px 26px;position:relative}
+.steps div:before{content:"";position:absolute;left:-10px;top:8px;width:17px;height:17px;border-radius:50%;background:var(--bg);border:3px solid var(--green)}
+.steps small{color:var(--green);font-weight:700}
+.steps h3{font-size:1.2rem;margin:2px 0 6px}
+.steps p{color:var(--mut);font-size:15px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px 40px;margin-top:34px}
+.why h3{font-size:1.15rem;color:var(--gold);margin-bottom:4px}
+.why p{color:#a9b8d0;font-size:15px}
+.jobs{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
+.jobs span{padding:12px 20px;background:#fff;border:1px solid var(--line);border-radius:4px 18px 4px 18px;font-weight:500}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin:30px 0}
+.info h3{font-size:1.1rem;color:var(--green);margin-bottom:4px}
+footer{background:var(--deep);color:#9fb0cb;padding:40px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+footer .wrap>div:last-child{display:flex;flex-wrap:wrap;gap:8px 16px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--gold)}
+#cb{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;border:0;background:var(--gold);color:var(--navy);cursor:pointer;box-shadow:0 6px 20px #0004}
+#cp{position:fixed;right:20px;bottom:90px;z-index:60;width:350px;max-width:calc(100vw - 40px);height:480px;max-height:calc(100vh - 120px);background:#fff;border-radius:18px;box-shadow:0 12px 40px #0005;display:none;flex-direction:column;overflow:hidden}
+#cp.open{display:flex}
+#cp .hd{background:var(--navy);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#cp .hd button{background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
+#msgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.m{max-width:86%;padding:9px 13px;border-radius:14px;font-size:14.5px;white-space:pre-wrap}
+.m.bot{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.m.me{background:var(--navy);color:#fff;align-self:flex-end}
+.q{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;background:var(--bg)}
+.q button{border:1px solid var(--green);background:#fff;color:var(--green);border-radius:99px;padding:4px 12px;font-size:13px;cursor:pointer}
+#cf{display:flex;border-top:1px solid var(--line)}
+#cf input{flex:1;border:0;padding:13px 14px;font:inherit;outline:0}
+#cf button{border:0;background:var(--gold);padding:0 18px;font-weight:700;cursor:pointer}
+.wal{text-align:center;font-size:13px;padding:7px;background:#eaf6f0}
+@media(max-width:880px){
+ nav{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:16px}
+ nav.open{display:flex}.menu{display:block}
+ .row2{grid-template-columns:1fr}.buy{justify-content:space-between}.price{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a href="#top"><img class="logo" src="https://media.base44.com/images/public/6aaaaa199e2aabce98ee445b/5164dd4ad_SFALogoOfficail.png" alt="Skill Filled Academia"></a>
+ <button class="menu" id="mb" aria-label="Menu">&#9776;</button>
+ <nav id="nav">
+  <a href="#vision">Vision</a><a href="#courses">Courses</a><a href="#quran">Quran</a><a href="#why">Why us</a><a href="#careers">Careers</a><a href="#contact">Contact</a>
+  <a class="btn sm" data-wa="Assalamu Alaikum, I want to enroll.">Enroll now</a>
+ </nav>
+</div></header>
+ 
+<main id="top">
+<div class="hero"><div class="wrap">
+ <h1>Where Islamic wisdom powers modern skill</h1>
+ <p>Hunar &amp; Hikmah. Islamic teachings, digital skills, analytics and STEM, for success in Dunya and Akhirah.</p>
+ <div class="row"><a class="btn" href="#courses">See courses</a><a class="btn ghost" data-wa="Assalamu Alaikum, I want to register.">Register on WhatsApp</a></div>
+ <div class="stats"><div><b>4</b><span>Departments</span></div><div><b>20+</b><span>Courses and programs</span></div><div><b>5+</b><span>Age, kids to adults</span></div><div><b>Live</b><span>Online and onsite</span></div></div>
+</div></div>
+ 
+<section id="vision"><div class="wrap">
+ <h2>Vision and mission</h2>
+ <div class="two">
+  <div class="box"><h3>Vision</h3><p>A leading global academy that transforms lives through Islamic wisdom, modern education and skill development, for success in both Dunya and Akhirah.</p></div>
+  <div class="box navy"><h3>Mission</h3><p>High-quality Islamic, digital, analytical and STEM education that builds knowledge, professional skills and strong moral values, strengthening each learner's connection with Allah and service to humanity.</p></div>
+ </div>
+ <ul class="goals">
+  <li>Spread authentic Islamic knowledge, Quran, Sunnah and ethics.</li>
+  <li>Build modern digital skills for the digital economy.</li>
+  <li>Develop problem-solving and strategic thinking.</li>
+  <li>Strong foundations in science, technology, engineering and math.</li>
+  <li>Make learners financially independent and career-ready.</li>
+  <li>Nurture balanced, spiritually connected individuals.</li>
+ </ul>
+ <div class="vals" id="vals"></div>
+</div></section>
+ 
+<section id="courses" class="dark"><div class="wrap">
+ <h2>Four departments, one mission</h2>
+ <p class="lead">Pick a department to see its programs.</p>
+ <div class="tabs" id="tabs"></div>
+ <div class="frame" id="frame"></div>
+ <div class="list" id="list"></div>
+</div></section>
+ 
+<section id="quran"><div class="wrap">
+ <h2>Quran program for children</h2>
+ <p class="lead">Ages 5 to 12. 18 months, Monday to Friday, 30 minute sessions. 6,900 PKR per month.</p>
+ <div class="steps" id="steps"></div>
+ <a class="btn" style="margin-top:20px" data-wa="Assalamu Alaikum, I want to enroll my child in the Quran program.">Enroll your child</a>
+</div></section>
+ 
+<section id="why" class="dark"><div class="wrap">
+ <h2>Why Skill Filled Academia</h2>
+ <div class="why" id="whyList"></div>
+</div></section>
+ 
+<section id="careers"><div class="wrap">
+ <h2>Join our team</h2>
+ <p class="lead">We hire people who combine skill with strong values. Send your resume, cover letter and portfolio.</p>
+ <div class="jobs"><span>Sales agents</span><span>Instructors</span><span>Admin and support</span></div>
+ <a class="btn" href="mailto:skillfilledacademia@gmail.com?subject=Career%20Application">Send your resume</a>
+</div></section>
+ 
+<section id="contact" class="dark"><div class="wrap">
+ <h2>Start your journey</h2>
+ <div class="info">
+  <div><h3>Head office</h3><p>F-7 Markaz, Islamabad, Pakistan</p></div>
+  <div><h3>WhatsApp</h3><p>+92 302 8117726</p></div>
+  <div><h3>Email</h3><p>skillfilledacademia@gmail.com</p></div>
+ </div>
+ <a class="btn" data-wa="Assalamu Alaikum, I want to enroll.">Chat on WhatsApp</a>
+</div></section>
+</main>
+ 
+<footer><div class="wrap">
+ <div>&copy; 2026 Skill Filled Academia. Made by Aruma Zahid</div>
+ <div><a href="https://facebook.com/profile.php?id=61593980860126">Facebook</a><a href="https://instagram.com/skillfilledacademia/">Instagram</a><a href="https://tiktok.com/@skillfilled1">TikTok</a><a href="https://youtube.com/@SkillFilled">YouTube</a><a href="https://linkedin.com/in/skill-filled-47695b436/">LinkedIn</a></div>
+</div></footer>
+ 
+<button id="cb" aria-label="Open chat"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></button>
+<div id="cp" role="dialog" aria-label="Chat">
+ <div class="hd"><span>Ask us anything</span><button id="cx" aria-label="Close">&times;</button></div>
+ <div id="msgs"></div>
+ <div class="q" id="q"></div>
+ <form id="cf"><input id="ci" placeholder="Type your question" maxlength="300" autocomplete="off"><button>Send</button></form>
+ <div class="wal"><a data-wa="Assalamu Alaikum, I have a question.">Continue on WhatsApp</a></div>
+</div>
+ 
+<script>
+const WA='923028117726';
+const wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+const $=s=>document.querySelector(s);
+const bind=r=>r.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa(a.dataset.wa);a.target='_blank';a.rel='noopener'});
+bind(document);
+ 
+$('#mb').onclick=()=>$('#nav').classList.toggle('open');
+$('#nav').onclick=()=>$('#nav').classList.remove('open');
+ 
+['Faith & Integrity','Knowledge with Purpose','Excellence','Innovation','Empowerment','Compassion & Service','Lifelong Learning']
+ .forEach(v=>$('#vals').insertAdjacentHTML('beforeend','<span>'+v+'</span>'));
+ 
+const digital=[
+['Digital Marketing','Social Media (Meta, TikTok)','Google Ads & SEM','Email & Analytics'],
+['Graphic Designing','Design Principles','Photoshop & Illustrator','Logo & Branding'],
+['Web Development','HTML, CSS, JavaScript','WordPress','UX/UI & E-Commerce'],
+['Video Editing & Animation','Premiere Pro & After Effects','Motion Graphics','Audio & Green Screen'],
+['UI/UX Designing','User Research','Wireframes & Prototypes','Figma'],
+['E-Commerce Management','Shopify & WooCommerce','Daraz & Etsy','Email Automation'],
+['IT Fundamentals','MS Office','Networking & Security','Databases & AI Tools'],
+['Freelancing','Fiverr & Upwork','Proposals & Negotiation','Personal Branding'],
+['AI & Automation','ML & NLP Concepts','APIs & Automation','Chatbots & Scraping']];
+const depts=[['Digital Skills Academy',9],['Personal Development',6],['Analytics & BI',1],['Islamic Studies & Languages',6]];
+ 
+function show(i){
+ document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('on',i==j));
+ const l=$('#list');
+ if(i==0){
+  $('#frame').textContent='Mon to Thu, 1 hour per session, 10 to 20 students per batch.';
+  l.innerHTML=digital.map(c=>'<div class="row2"><h3>'+c[0]+'<small>6 months</small></h3><ul class="chips">'+c.slice(1).map(x=>'<li>'+x+'</li>').join('')+'</ul><div class="buy"><div class="price">6,900 PKR<small>per month, or 30 USD</small></div><a class="btn sm" data-wa="Hi, I want to enroll in '+c[0]+'.">Enroll</a></div></div>').join('');
+ }else{
+  $('#frame').textContent='';
+  l.innerHTML='<div class="soon"><p>'+depts[i][1]+(depts[i][1]>1?' programs':' program')+' in '+depts[i][0]+'. Ask for details, fees and timings.</p><a class="btn sm" data-wa="Hi, I want details about '+depts[i][0]+'.">Ask on WhatsApp</a></div>';
+ }
+ bind(l);
+}
+depts.forEach((d,i)=>{const b=document.createElement('button');b.className='tab';b.innerHTML=d[0]+'<b>'+d[1]+'</b>';b.onclick=()=>show(i);$('#tabs').append(b)});
+show(0);
+ 
+[['Months 1-4','Noorani Qaida','Letters, pronunciation, joining and phonetics.'],
+['Months 5-10','Quran reading','Accuracy, speed and pronunciation.'],
+['Months 11-18','Quran completion','Guided recitation with regular review.'],
+['Throughout','Islamic studies','Six Kalimas, Duas, Wudu, Salah, short Surahs and manners.']]
+ .forEach(s=>$('#steps').insertAdjacentHTML('beforeend','<div><small>'+s[0]+'</small><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div>'));
+ 
+[['Purpose-led training','Technical skills with ethical and personal growth.'],
+['Certified trainers','Industry professionals and scholars.'],
+['Project-based learning','Assignments modeled on real client work.'],
+['Flexible schedules','Live online classes that fit busy lives.'],
+['Career ready','Prepares you for jobs and online platforms.'],
+['Accessible fees','Affordable monthly plans.'],
+['Certification','A certificate of completion for every program.']]
+ .forEach(w=>$('#whyList').insertAdjacentHTML('beforeend','<div><h3>'+w[0]+'</h3><p>'+w[1]+'</p></div>'));
+ 
+// chat: quick answers first, LLM for the rest
+const R={
+ hello:'Assalamu Alaikum! How can I help you?',
+ fees:'Digital courses: 6,900 PKR or 30 USD per month. Quran program for kids: 6,900 PKR per month.',
+ courses:'Digital Marketing, Graphic Designing, Web Development, Video Editing, UI/UX, E-Commerce, IT Fundamentals, Freelancing, AI & Automation. Also Personal Development, Analytics and Islamic Studies.',
+ time:'Digital courses run Mon to Thu, 1 hour per session, 6 months, 10 to 20 students per batch. Live online and onsite.',
+ quran:'Quran program for ages 5 to 12: 18 months, Mon to Fri, 30 minute sessions, from Noorani Qaida to full Quran.',
+ careers:'We hire sales agents, instructors and admin staff. Email your resume to skillfilledacademia@gmail.com.',
+ contact:'F-7 Markaz, Islamabad. WhatsApp +92 302 8117726. Email skillfilledacademia@gmail.com.'};
+const rules=[[/^(hi|hello|salam|assalam|aoa)/i,'hello'],[/fee|price|cost|charge|paisa|kitn|rate/i,'fees'],[/quran|qaida|noorani|kid|child|bacch/i,'quran'],[/time|schedule|timing|duration|batch|class/i,'time'],[/job|career|hiring|teacher|instructor/i,'careers'],[/contact|phone|number|address|where|location|email|office/i,'contact'],[/course|program|learn|skill/i,'courses']];
+const hist=[];
+function add(t,me){const d=document.createElement('div');d.className='m '+(me?'me':'bot');d.textContent=t;$('#msgs').append(d);$('#msgs').scrollTop=1e9;return d}
+function say(t){add(t);hist.push({role:'assistant',content:t})}
+async function ask(t){
+ t=t.trim().slice(0,300);if(!t)return;
+ add(t,1);hist.push({role:'user',content:t});
+ const r=rules.find(x=>x[0].test(t));
+ if(r&&t.split(/\s+/).length<=5)return say(R[r[1]]);
+ const w=add('...');
+ try{
+  const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:hist})});
+  if(!res.ok)throw 0;
+  const j=await res.json();w.textContent=j.reply;hist.push({role:'assistant',content:j.reply});
+ }catch(e){w.textContent=r?R[r[1]]:'I could not answer that. Please message us on WhatsApp.'}
+}
+[['Courses','courses'],['Fees','fees'],['Timings','time'],['Quran','quran'],['Contact','contact']].forEach(q=>{
+ const b=document.createElement('button');b.textContent=q[0];b.onclick=()=>{add(q[0],1);say(R[q[1]])};$('#q').append(b)});
+$('#cf').onsubmit=e=>{e.preventDefault();const i=$('#ci');ask(i.value);i.value=''};
+$('#cb').onclick=()=>$('#cp').classList.toggle('open');
+$('#cx').onclick=()=>$('#cp').classList.remove('open');
+say(R.hello);
+</script>
+</body>
+</html>
