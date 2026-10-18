@@ -30,6 +30,50 @@ nav a:not(.btn):hover{color:var(--gold)}
 .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:800px}
 .hero p{max-width:600px;color:#c5d0e3;margin:22px 0 32px;font-size:1.1rem}
 .hero .row{display:flex;gap:14px;flex-wrap:wrap}
+.hero{position:relative;overflow:hidden;padding-bottom:170px}
+.hh{position:relative;z-index:1}
+.scene{position:absolute;inset:0;z-index:0}
+.scene svg,.scene video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.scene video{opacity:0;transition:opacity 1s}
+.hero.vid .scene video{opacity:1}
+.hero.vid .scene svg{opacity:0}
+.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0d1f3ce6 0%,#0d1f3c99 40%,#0d1f3c00 75%)}
+.st{animation:tw 3s infinite alternate}
+@keyframes tw{to{opacity:.2}}
+#glow{animation:pls 2.6s ease-in-out infinite alternate}
+@keyframes pls{to{opacity:.55}}
+#stu{--sx:40px;opacity:0;animation:walk 9s ease-in-out infinite}
+@keyframes walk{0%{opacity:0;transform:translate(var(--sx),664px) scale(1.25)}4%{opacity:1}62%{opacity:1;transform:translate(905px,604px) scale(.72)}68%,100%{opacity:0;transform:translate(910px,600px) scale(.66)}}
+.lg{transform-box:fill-box;transform-origin:50% 0;animation:leg .45s ease-in-out infinite alternate}
+.lg+.lg{animation-direction:alternate-reverse}
+@keyframes leg{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+.deck{position:relative;height:360px;max-width:920px;margin:64px auto 0}
+.pgwin{position:absolute;inset:0;background:#f7f8fb;color:var(--ink);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px #0007;transform-origin:50% 0;transform:translateY(calc(var(--d,0)*-18px)) scale(calc(1 - var(--d,0)*.035)) rotate(calc(var(--d,0)*-.5deg));opacity:calc(1 - var(--d,0)*.25);z-index:calc(20 - var(--d,0));transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s}
+.pgwin.far{opacity:0}
+.pgwin:not(.act){pointer-events:none}
+.pgwin:not(.act) .tp li{opacity:0;animation:none}
+.bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#e6eaf1}
+.bar i{width:10px;height:10px;border-radius:50%;background:#c3ccd9}
+.url{margin-left:10px;flex:1;background:#fff;border-radius:99px;padding:3px 14px;font-size:13px;color:var(--mut)}
+.pg{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;padding:34px}
+.pl small{color:var(--green);font-weight:700}
+.pl h3{font-size:clamp(1.8rem,4vw,2.6rem);margin:6px 0 18px}
+.tp{list-style:none;padding:0;display:grid;gap:10px}
+.tp li{padding-left:26px;position:relative;animation:pop .5s both}
+.tp li:before{content:"";position:absolute;left:3px;top:9px;width:9px;height:9px;background:var(--green);transform:rotate(45deg)}
+@keyframes pop{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+.pr{border-left:1px solid var(--line);padding-left:30px;display:flex;flex-direction:column;gap:16px;justify-content:center;align-items:flex-start}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.meta span{border:1px solid var(--green);color:var(--green);border-radius:99px;padding:3px 12px;font-size:13px}
+.pprice{font:700 2rem Fraunces,serif;color:#b8862b}
+.pprice small{display:block;font:400 13px 'DM Sans',sans-serif;color:var(--mut)}
+.ctl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:28px}
+.ctl button{border:1px solid #ffffff55;background:#0d1f3c99;color:#fff;border-radius:99px;min-width:38px;height:38px;cursor:pointer;font:inherit;padding:0 14px}
+#cnav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:360px}
+#cnav button{min-width:0;width:28px;height:6px;padding:0;border:0;background:#ffffff40;position:relative;overflow:hidden}
+#cnav button.on:after{content:"";position:absolute;inset:0;background:var(--gold);transform-origin:left;animation:fill 7.5s linear forwards}
+.paused #cnav button.on:after{animation:none}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .stats{display:flex;flex-wrap:wrap;gap:12px 44px;margin-top:56px;padding-top:28px;border-top:1px solid #ffffff22}
 .stats b{display:block;font:700 1.9rem Fraunces,serif;color:var(--gold)}
 .stats span{color:#9fb0cb;font-size:14px}
@@ -77,11 +121,22 @@ h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:12px}
 .jobs span{padding:12px 20px;background:#fff;border:1px solid var(--line);border-radius:4px 18px 4px 18px;font-weight:500}
 .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin:30px 0}
 .info h3{font-size:1.1rem;color:var(--green);margin-bottom:4px}
-footer{background:var(--deep);color:#9fb0cb;padding:40px 0;font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
-footer .wrap>div:last-child{display:flex;flex-wrap:wrap;gap:8px 16px}
+footer{background:var(--deep);color:#9fb0cb;padding:64px 0 28px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:44px}
+.logo.big{height:92px;margin-bottom:22px}
+.fbrand h3{font-size:1.5rem;color:#fff;margin-bottom:12px}
+.fbrand p{max-width:420px}
+footer h4{font:700 12px 'DM Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+footer ul{list-style:none;padding:0;display:grid;gap:12px}
+.fcontact li{display:flex;gap:12px;align-items:center}
+.ic{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fcontact .ic{color:var(--green)}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.social a{width:36px;height:36px;border-radius:50%;border:1px solid #ffffff33;display:grid;place-items:center}
 footer a{text-decoration:none}
-footer a:hover{color:var(--gold)}
+footer a:hover{color:var(--gold);border-color:var(--gold)}
+.fbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:44px;padding-top:22px;border-top:1px solid #ffffff1f;font-size:13px}
+.fbar em{font-family:Fraunces,Georgia,serif;color:var(--gold)}
 #cb{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;border:0;background:var(--gold);color:var(--navy);cursor:pointer;box-shadow:0 6px 20px #0004}
 #cp{position:fixed;right:20px;bottom:90px;z-index:60;width:350px;max-width:calc(100vw - 40px);height:480px;max-height:calc(100vh - 120px);background:#fff;border-radius:18px;box-shadow:0 12px 40px #0005;display:none;flex-direction:column;overflow:hidden}
 #cp.open{display:flex}
@@ -101,8 +156,16 @@ footer a:hover{color:var(--gold)}
  nav{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:16px}
  nav.open{display:flex}.menu{display:block}
  .row2{grid-template-columns:1fr}.buy{justify-content:space-between}.price{text-align:left}
+ .fgrid{grid-template-columns:1fr}
+ .pg{grid-template-columns:1fr;padding:22px;gap:18px}
+ .pr{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:18px}
+ .deck{height:560px}
+ .hero{padding-bottom:250px}
+ #moon{display:none}
+ #stu{--sx:580px}
+ .scene:after{background:linear-gradient(180deg,#0d1f3ccc 0%,#0d1f3c66 55%,#0d1f3c00 85%)}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scene *{animation:none!important}.pgwin{transition:none}}
 </style>
 </head>
 <body>
@@ -114,15 +177,49 @@ footer a:hover{color:var(--gold)}
   <a class="btn sm" data-wa="Assalamu Alaikum, I want to enroll.">Enroll now</a>
  </nav>
 </div></header>
- 
+
 <main id="top">
-<div class="hero"><div class="wrap">
+<div class="hero" id="hero">
+<div class="scene" aria-hidden="true">
+<video id="bg" muted playsinline autoplay loop></video>
+<svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMax slice">
+ <defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1a35"/><stop offset=".7" stop-color="#16375f"/><stop offset="1" stop-color="#2a5a6e"/></linearGradient>
+  <radialGradient id="gl" cx=".5" cy=".6" r=".6"><stop offset="0" stop-color="#ffe6a3"/><stop offset="1" stop-color="#e0b45a" stop-opacity="0"/></radialGradient>
+ </defs>
+ <rect x="-3000" y="-3000" width="7200" height="3000" fill="#0a1a35"/>
+ <rect width="1200" height="700" fill="url(#sky)"/>
+ <g fill="#fff"><circle class="st" cx="120" cy="90" r="1.6"/><circle class="st" cx="360" cy="60" r="1.4"/><circle class="st" cx="560" cy="130" r="1.6"/><circle class="st" cx="760" cy="50" r="1.3"/><circle class="st" cx="1120" cy="200" r="1.5"/><circle class="st" cx="250" cy="200" r="1.2"/></g>
+ <path id="moon" d="M1010 70a38 38 0 1 0 30 62a30 30 0 1 1 -30 -62z" fill="#e0b45a"/>
+ <g fill="#0b1b36" opacity=".9"><rect x="30" y="520" width="70" height="80"/><rect x="110" y="480" width="50" height="120"/><path d="M200 600v-60a40 40 0 0 1 80 0v60z"/><rect x="318" y="450" width="14" height="150"/><path d="M314 450l11-26 11 26z"/><rect x="400" y="500" width="90" height="100"/><rect x="520" y="540" width="70" height="60"/></g>
+ <rect y="600" width="1200" height="100" fill="#0a1830"/>
+ <path d="M0 700L540 612H1000L1200 700z" fill="#14305a"/>
+ <ellipse id="glow" cx="910" cy="585" rx="140" ry="80" fill="url(#gl)"/>
+ <rect x="760" y="430" width="300" height="170" fill="#183663" stroke="#e0b45a" stroke-width="2"/>
+ <path d="M820 430a90 90 0 0 1 180 0z" fill="#1d4378" stroke="#e0b45a" stroke-width="2"/>
+ <path d="M910 340v-30" stroke="#e0b45a" stroke-width="3"/><circle cx="910" cy="304" r="6" fill="#e0b45a"/>
+ <rect x="785" y="444" width="250" height="36" rx="4" fill="#0d1f3c" stroke="#e0b45a"/>
+ <text x="910" y="469" text-anchor="middle" fill="#e0b45a" font-family="Fraunces,Georgia,serif" font-size="20" font-weight="700">Skill Filled Academia</text>
+ <g fill="#ffd978"><path d="M785 548v-40a14 14 0 0 1 28 0v40z"/><path d="M830 548v-40a14 14 0 0 1 28 0v40z"/><path d="M962 548v-40a14 14 0 0 1 28 0v40z"/><path d="M1007 548v-40a14 14 0 0 1 28 0v40z"/></g>
+ <path d="M878 600v-72a32 32 0 0 1 64 0v72z" fill="#ffe9ad"/>
+ <g id="stu">
+  <rect class="lg" x="-9" y="-32" width="8" height="32" rx="4" fill="#0b1b36"/>
+  <rect class="lg" x="1" y="-32" width="8" height="32" rx="4" fill="#0b1b36"/>
+  <rect x="-22" y="-64" width="12" height="28" rx="5" fill="#e0b45a"/>
+  <rect x="-13" y="-70" width="26" height="42" rx="9" fill="#2f9e6e"/>
+  <circle cx="0" cy="-84" r="12" fill="#e9c9a0"/>
+  <path d="M-12 -86a12 12 0 0 1 24 0z" fill="#0b1b36"/>
+  <g transform="rotate(-8 10 -48)"><rect x="2" y="-60" width="28" height="18" rx="2" fill="#cfe3ff"/><rect x="0" y="-42" width="32" height="4" rx="2" fill="#8aa0c2"/></g>
+ </g>
+</svg>
+</div>
+<div class="wrap hh">
  <h1>Where Islamic wisdom powers modern skill</h1>
  <p>Hunar &amp; Hikmah. Islamic teachings, digital skills, analytics and STEM, for success in Dunya and Akhirah.</p>
  <div class="row"><a class="btn" href="#courses">See courses</a><a class="btn ghost" data-wa="Assalamu Alaikum, I want to register.">Register on WhatsApp</a></div>
  <div class="stats"><div><b>4</b><span>Departments</span></div><div><b>20+</b><span>Courses and programs</span></div><div><b>5+</b><span>Age, kids to adults</span></div><div><b>Live</b><span>Online and onsite</span></div></div>
 </div></div>
- 
+
 <section id="vision"><div class="wrap">
  <h2>Vision and mission</h2>
  <div class="two">
@@ -139,34 +236,35 @@ footer a:hover{color:var(--gold)}
  </ul>
  <div class="vals" id="vals"></div>
 </div></section>
- 
+
 <section id="courses" class="dark"><div class="wrap">
  <h2>Four departments, one mission</h2>
  <p class="lead">Pick a department to see its programs.</p>
  <div class="tabs" id="tabs"></div>
  <div class="frame" id="frame"></div>
- <div class="list" id="list"></div>
+ <div class="deck" id="deck"></div>
+ <div class="ctl" id="ctl2"><button id="prev" aria-label="Previous">&#8249;</button><button id="tog" aria-label="Pause">&#10074;&#10074;</button><button id="next" aria-label="Next">&#8250;</button><div id="cnav"></div></div>
 </div></section>
- 
+
 <section id="quran"><div class="wrap">
  <h2>Quran program for children</h2>
  <p class="lead">Ages 5 to 12. 18 months, Monday to Friday, 30 minute sessions. 6,900 PKR per month.</p>
  <div class="steps" id="steps"></div>
  <a class="btn" style="margin-top:20px" data-wa="Assalamu Alaikum, I want to enroll my child in the Quran program.">Enroll your child</a>
 </div></section>
- 
+
 <section id="why" class="dark"><div class="wrap">
  <h2>Why Skill Filled Academia</h2>
  <div class="why" id="whyList"></div>
 </div></section>
- 
+
 <section id="careers"><div class="wrap">
  <h2>Join our team</h2>
  <p class="lead">We hire people who combine skill with strong values. Send your resume, cover letter and portfolio.</p>
  <div class="jobs"><span>Sales agents</span><span>Instructors</span><span>Admin and support</span></div>
  <a class="btn" href="mailto:skillfilledacademia@gmail.com?subject=Career%20Application">Send your resume</a>
 </div></section>
- 
+
 <section id="contact" class="dark"><div class="wrap">
  <h2>Start your journey</h2>
  <div class="info">
@@ -177,12 +275,37 @@ footer a:hover{color:var(--gold)}
  <a class="btn" data-wa="Assalamu Alaikum, I want to enroll.">Chat on WhatsApp</a>
 </div></section>
 </main>
- 
+
 <footer><div class="wrap">
- <div>&copy; 2026 Skill Filled Academia. Made by Aruma Zahid</div>
- <div><a href="https://facebook.com/profile.php?id=61593980860126">Facebook</a><a href="https://instagram.com/skillfilledacademia/">Instagram</a><a href="https://tiktok.com/@skillfilled1">TikTok</a><a href="https://youtube.com/@SkillFilled">YouTube</a><a href="https://linkedin.com/in/skill-filled-47695b436/">LinkedIn</a></div>
+ <div class="fgrid">
+  <div class="fbrand">
+   <img class="logo big" src="https://media.base44.com/images/public/6aaaaa199e2aabce98ee445b/5164dd4ad_SFALogoOfficail.png" alt="Skill Filled Academia">
+   <h3>Building Futures Through Hunar &amp; Hikmah</h3>
+   <p>A modern educational institution nurturing minds through a balanced combination of Islamic teachings, digital skills, analytical learning, and STEM education.</p>
+  </div>
+  <div>
+   <h4>Explore</h4>
+   <ul><li><a href="#vision">Vision &amp; Mission</a></li><li><a href="#courses">Courses</a></li><li><a href="#quran">Quran Program</a></li><li><a href="#why">Why Choose Us</a></li><li><a href="#careers">Careers</a></li><li><a href="#contact">Contact</a></li></ul>
+  </div>
+  <div>
+   <h4>Get in touch</h4>
+   <ul class="fcontact">
+    <li><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>F-7 Markaz, Islamabad, Pakistan</li>
+    <li><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><a data-wa="Assalamu Alaikum, I have a question.">+92 (0) 302-8117726</a></li>
+    <li><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:skillfilledacademia@gmail.com">skillfilledacademia@gmail.com</a></li>
+   </ul>
+   <div class="social">
+    <a href="https://facebook.com/profile.php?id=61593980860126" aria-label="Facebook"><svg class="ic" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg></a>
+    <a href="https://instagram.com/skillfilledacademia/" aria-label="Instagram"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg></a>
+    <a href="https://tiktok.com/@skillfilled1" aria-label="TikTok"><svg class="ic" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 3 2.5 4.5 5 4.5"/></svg></a>
+    <a href="https://youtube.com/@SkillFilled" aria-label="YouTube"><svg class="ic" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+    <a href="https://linkedin.com/in/skill-filled-47695b436/" aria-label="LinkedIn"><svg class="ic" viewBox="0 0 24 24"><path d="M6 10v9M6 6v.1M10 19v-9M10 14a4 4 0 0 1 8 0v5"/></svg></a>
+   </div>
+  </div>
+ </div>
+ <div class="fbar"><span>&copy; 2026 Skill Filled Academia. All rights reserved. Made by Aruma Zahid</span><em>Empowering Skills with Islamic Wisdom</em></div>
 </div></footer>
- 
+
 <button id="cb" aria-label="Open chat"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9l-5 4v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></button>
 <div id="cp" role="dialog" aria-label="Chat">
  <div class="hd"><span>Ask us anything</span><button id="cx" aria-label="Close">&times;</button></div>
@@ -191,20 +314,20 @@ footer a:hover{color:var(--gold)}
  <form id="cf"><input id="ci" placeholder="Type your question" maxlength="300" autocomplete="off"><button>Send</button></form>
  <div class="wal"><a data-wa="Assalamu Alaikum, I have a question.">Continue on WhatsApp</a></div>
 </div>
- 
+
 <script>
 const WA='923028117726';
 const wa=t=>'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
 const $=s=>document.querySelector(s);
 const bind=r=>r.querySelectorAll('[data-wa]').forEach(a=>{a.href=wa(a.dataset.wa);a.target='_blank';a.rel='noopener'});
 bind(document);
- 
+
 $('#mb').onclick=()=>$('#nav').classList.toggle('open');
 $('#nav').onclick=()=>$('#nav').classList.remove('open');
- 
+
 ['Faith & Integrity','Knowledge with Purpose','Excellence','Innovation','Empowerment','Compassion & Service','Lifelong Learning']
  .forEach(v=>$('#vals').insertAdjacentHTML('beforeend','<span>'+v+'</span>'));
- 
+
 const digital=[
 ['Digital Marketing','Social Media (Meta, TikTok)','Google Ads & SEM','Email & Analytics'],
 ['Graphic Designing','Design Principles','Photoshop & Illustrator','Logo & Branding'],
@@ -216,28 +339,59 @@ const digital=[
 ['Freelancing','Fiverr & Upwork','Proposals & Negotiation','Personal Branding'],
 ['AI & Automation','ML & NLP Concepts','APIs & Automation','Chatbots & Scraping']];
 const depts=[['Digital Skills Academy',9],['Personal Development',6],['Analytics & BI',1],['Islamic Studies & Languages',6]];
- 
+
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-$/,'');
+const digitalPages=digital.map(c=>({name:c[0],topics:c.slice(1),meta:['6 months','Mon to Thu','1 hr a day'],fee:'6,900 PKR / month',alt:'or 30 USD / month'}));
+const others=[['Personal Development',6],['Analytics & BI',1],['Islamic Studies & Languages',6]].map(d=>({name:d[0],topics:[d[1]+(d[1]>1?' programs':' program')+' in this department','Fees and timings on request'],meta:['Details on WhatsApp'],fee:'Ask for fees',alt:'',cta:'Ask on WhatsApp'}));
+let pages=[],si=0,paused=false,timer,seen=false;
+
+// pages are stacked: --d is how far a page sits behind the front one
+function pageHtml(p,k){
+ return '<article class="pgwin" aria-label="'+p.name+'"><div class="bar"><i></i><i></i><i></i><span class="url">/courses/'+slug(p.name)+'</span></div><div class="pg"><div class="pl"><small>'+(k+1)+' of '+pages.length+'</small><h3>'+p.name+'</h3><ul class="tp">'+p.topics.map((t,j)=>'<li style="animation-delay:'+(.4+j*.2)+'s">'+t+'</li>').join('')+'</ul></div><div class="pr"><div class="meta">'+p.meta.map(m=>'<span>'+m+'</span>').join('')+'</div><div class="pprice">'+p.fee+'<small>'+p.alt+'</small></div><a class="btn" data-wa="Hi, I want to enroll in '+p.name+'.">'+(p.cta||'Enroll')+'</a></div></div></article>';
+}
+function place(){
+ const n=pages.length;
+ document.querySelectorAll('#deck .pgwin').forEach((el,k)=>{
+  const d=(k-si+n)%n;
+  el.style.setProperty('--d',d);
+  el.classList.toggle('act',d==0);
+  el.classList.toggle('far',d>3);
+  el.inert=d>0;
+ });
+ document.querySelectorAll('#cnav button').forEach((b,j)=>b.classList.toggle('on',j==si));
+ clearTimeout(timer);
+ if(!paused&&!calm&&seen&&n>1)timer=setTimeout(()=>go(si+1),7500);
+}
+function go(i){si=(i+pages.length)%pages.length;place()}
+function setPaused(v){
+ paused=v;$('#ctl2').classList.toggle('paused',v);
+ $('#tog').innerHTML=v?'&#9654;':'&#10074;&#10074;';$('#tog').setAttribute('aria-label',v?'Play':'Pause');
+}
 function show(i){
  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('on',i==j));
- const l=$('#list');
- if(i==0){
-  $('#frame').textContent='Mon to Thu, 1 hour per session, 10 to 20 students per batch.';
-  l.innerHTML=digital.map(c=>'<div class="row2"><h3>'+c[0]+'<small>6 months</small></h3><ul class="chips">'+c.slice(1).map(x=>'<li>'+x+'</li>').join('')+'</ul><div class="buy"><div class="price">6,900 PKR<small>per month, or 30 USD</small></div><a class="btn sm" data-wa="Hi, I want to enroll in '+c[0]+'.">Enroll</a></div></div>').join('');
- }else{
-  $('#frame').textContent='';
-  l.innerHTML='<div class="soon"><p>'+depts[i][1]+(depts[i][1]>1?' programs':' program')+' in '+depts[i][0]+'. Ask for details, fees and timings.</p><a class="btn sm" data-wa="Hi, I want details about '+depts[i][0]+'.">Ask on WhatsApp</a></div>';
- }
- bind(l);
+ pages=i==0?digitalPages:[others[i-1]];
+ $('#frame').textContent=i==0?'Mon to Thu, 1 hour per session, 10 to 20 students per batch.':'';
+ $('#deck').innerHTML=pages.map(pageHtml).join('');
+ bind($('#deck'));
+ $('#cnav').innerHTML='';
+ pages.forEach((p,j)=>{const b=document.createElement('button');b.title=p.name;b.setAttribute('aria-label',p.name);b.onclick=()=>{setPaused(true);go(j)};$('#cnav').append(b)});
+ $('#ctl2').style.display=pages.length>1?'flex':'none';
+ setPaused(false);si=0;place();
 }
 depts.forEach((d,i)=>{const b=document.createElement('button');b.className='tab';b.innerHTML=d[0]+'<b>'+d[1]+'</b>';b.onclick=()=>show(i);$('#tabs').append(b)});
+$('#prev').onclick=()=>{setPaused(true);go(si-1)};
+$('#next').onclick=()=>{setPaused(true);go(si+1)};
+$('#tog').onclick=()=>{setPaused(!paused);place()};
+new IntersectionObserver(e=>{seen=e[0].isIntersecting;place()},{threshold:.35}).observe($('#deck'));
 show(0);
- 
+
 [['Months 1-4','Noorani Qaida','Letters, pronunciation, joining and phonetics.'],
 ['Months 5-10','Quran reading','Accuracy, speed and pronunciation.'],
 ['Months 11-18','Quran completion','Guided recitation with regular review.'],
 ['Throughout','Islamic studies','Six Kalimas, Duas, Wudu, Salah, short Surahs and manners.']]
  .forEach(s=>$('#steps').insertAdjacentHTML('beforeend','<div><small>'+s[0]+'</small><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div>'));
- 
+
 [['Purpose-led training','Technical skills with ethical and personal growth.'],
 ['Certified trainers','Industry professionals and scholars.'],
 ['Project-based learning','Assignments modeled on real client work.'],
@@ -246,7 +400,15 @@ show(0);
 ['Accessible fees','Affordable monthly plans.'],
 ['Certification','A certificate of completion for every program.']]
  .forEach(w=>$('#whyList').insertAdjacentHTML('beforeend','<div><h3>'+w[0]+'</h3><p>'+w[1]+'</p></div>'));
- 
+
+// hero scene: wider view on desktop, closer on phones; assets/intro.mp4 replaces the drawing if present
+const hero=$('#hero'),bg=$('#bg'),scn=hero.querySelector('svg');
+function fit(){const m=innerWidth<880;scn.setAttribute('viewBox',m?'560 0 640 700':'0 0 1200 700');scn.setAttribute('preserveAspectRatio',m?'xMidYMax meet':'xMidYMax slice')}
+fit();addEventListener('resize',fit);
+bg.onloadeddata=()=>hero.classList.add('vid');
+bg.onerror=()=>hero.classList.remove('vid');
+bg.src='assets/intro.mp4';
+
 // chat: quick answers first, LLM for the rest
 const R={
  hello:'Assalamu Alaikum! How can I help you?',
