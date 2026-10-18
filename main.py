@@ -5,6 +5,7 @@ import requests
 from flask import Flask, jsonify, request, send_from_directory
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+PUBLIC = os.path.join(BASE, "public")
 app = Flask(__name__)
 
 KB = '''You are the assistant for Skill Filled Academia (Hunar & Hikmah), F-7 Markaz, Islamabad.
@@ -72,7 +73,7 @@ def ask_groq(msgs):
 
 @app.route("/")
 def home():
-    return send_from_directory(BASE, "index.html")
+    return send_from_directory(PUBLIC, "index.html")
 
 
 @app.route("/health")
@@ -82,7 +83,7 @@ def health():
 
 @app.route("/assets/<path:name>")
 def assets(name):
-    return send_from_directory(os.path.join(BASE, "assets"), name)
+    return send_from_directory(os.path.join(PUBLIC, "assets"), name)
 
 
 @app.route("/api/chat", methods=["POST"])

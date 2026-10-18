@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "skill-filled-academia",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-12",
+  "observability": { "enabled": true },
+  "assets": { "directory": "./public", "binding": "ASSETS" }
+}
