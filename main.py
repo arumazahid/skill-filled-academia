@@ -75,6 +75,11 @@ def home():
     return send_from_directory(BASE, "index.html")
 
 
+@app.route("/health")
+def health():
+    return "ok"
+
+
 @app.route("/assets/<path:name>")
 def assets(name):
     return send_from_directory(os.path.join(BASE, "assets"), name)
